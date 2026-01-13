@@ -1,1 +1,8 @@
 
+Flask
+python-docx
+pytest
+Werkzeug
+requests
+python-dotenv
+gigachat
