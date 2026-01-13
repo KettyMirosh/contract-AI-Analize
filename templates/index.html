@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Contract Analyzer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-lg">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h1 class="mb-0">🤖 AI Contract Analyzer</h1>
+                        <p class="mb-0">Анализ договоров и создание протоколов разногласий</p>
+                    </div>
+                    <div class="card-body p-5">
+                        <form id="uploadForm" enctype="multipart/form-data">
+                            <div class="mb-4">
+                                <label for="contractFile" class="form-label">Загрузите договор (Word .docx)</label>
+                                <input class="form-control form-control-lg" type="file" id="contractFile" name="contract" accept=".docx" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100" id="analyzeBtn">
+                                <span id="btnText">🔍 Анализировать договор</span>
+                                <span id="btnSpinner" class="spinner-border spinner-border-sm d-none" role="status"></span>
+                            </button>
+                        </form>
 
+                        <div id="results" class="mt-4 d-none">
+                            <h3 class="text-primary">📊 Результаты анализа</h3>
+                            <div class="alert alert-info">
+                                <h5>Анализ договора:</h5>
+                                <pre id="analysisText" class="mb-0"></pre>
+                            </div>
+
+                            <div class="alert alert-warning">
+                                <h5>Протокол разногласий:</h5>
+                                <pre id="protocolText" class="mb-0"></pre>
+                            </div>
+
+                            <a id="downloadLink" class="btn btn-success btn-lg w-100" download>
+                                📥 Скачать протокол разногласий (Word)
+                            </a>
+                        </div>
+
+                        <div id="error" class="alert alert-danger mt-4 d-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
