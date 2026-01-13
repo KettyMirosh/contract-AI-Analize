@@ -1,0 +1,35 @@
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    border-radius: 15px;
+    border: none;
+}
+
+.card-header {
+    border-radius: 15px 15px 0 0 !important;
+    padding: 2rem;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.btn-lg {
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+.alert h5 {
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
